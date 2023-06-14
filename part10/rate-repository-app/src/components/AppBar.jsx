@@ -1,5 +1,8 @@
-import { View, StyleSheet, Text, ScrollView } from 'react-native';
+import { View, StyleSheet, Text, ScrollView, Pressable } from 'react-native';
 import { Link } from 'react-router-native';
+
+import useAuthUser from './hooks/useAuthUser';
+import useSignOut from './hooks/useSignOut';
 
 import theme from '../theme';
 
@@ -26,15 +29,25 @@ const styles = StyleSheet.create({
 });
 
 const AppBar = () => {
+	const { authUser } = useAuthUser();
+	const signOut = useSignOut();
+
 	return (
 		<View style={styles.container}>
 			<ScrollView contentContainerStyle={styles.contentContainer} horizontal>
 				<Link to='/'>
 					<Text style={styles.heading}>Repositories</Text>
 				</Link>
-				<Link to='/signin'>
-					<Text style={styles.signIn}>Sign in</Text>
-				</Link>
+
+				{authUser ? (
+					<Pressable onPress={signOut}>
+						<Text style={styles.signIn}>Sign Out</Text>
+					</Pressable>
+				) : (
+					<Link to='/signin'>
+						<Text style={styles.signIn}>Sign in</Text>
+					</Link>
+				)}
 			</ScrollView>
 		</View>
 	);

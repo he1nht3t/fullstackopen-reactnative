@@ -1,0 +1,48 @@
+{
+	"__flipperHack": "React Native packager is running",
+	"_internal": {
+		"dynamicConfigPath": null,
+		"isDebug": false,
+		"packageJsonPath": "/Users/he1nh3t/Documents/GitHub/fullstackopen-reactnative/part10/rate-repository-app/package.json",
+		"projectRoot": "/Users/he1nh3t/Documents/GitHub/fullstackopen-reactnative/part10/rate-repository-app",
+		"staticConfigPath": "/Users/he1nh3t/Documents/GitHub/fullstackopen-reactnative/part10/rate-repository-app/app.json"
+	},
+	"android": {
+		"adaptiveIcon": {
+			"backgroundColor": "#FFFFFF",
+			"foregroundImage": "./assets/adaptive-icon.png",
+			"foregroundImageUrl": "http://192.168.100.234:19000/assets/./assets/adaptive-icon.png"
+		}
+	},
+	"assetBundlePatterns": ["**/*"],
+	"bundleUrl": "http://192.168.100.234:19000/node_modules/expo/AppEntry.bundle?platform=ios&dev=true&hot=false",
+	"debuggerHost": "192.168.100.234:19000",
+	"developer": {
+		"projectRoot": "/Users/he1nh3t/Documents/GitHub/fullstackopen-reactnative/part10/rate-repository-app",
+		"tool": "expo-cli"
+	},
+	"hostUri": "192.168.100.234:19000",
+	"icon": "./assets/icon.png",
+	"iconUrl": "http://192.168.100.234:19000/assets/./assets/icon.png",
+	"id": "@heinhtet_aung/rate-repository-app",
+	"ios": { "supportsTablet": true },
+	"isVerified": true,
+	"logUrl": "http://192.168.100.234:19000/logs",
+	"mainModuleName": "node_modules/expo/AppEntry",
+	"name": "rate-repository-app",
+	"orientation": "portrait",
+	"packagerOpts": { "dev": true },
+	"platforms": ["ios", "android", "web"],
+	"sdkVersion": "46.0.0",
+	"slug": "rate-repository-app",
+	"splash": {
+		"backgroundColor": "#ffffff",
+		"image": "./assets/splash.png",
+		"imageUrl": "http://192.168.100.234:19000/assets/./assets/splash.png",
+		"resizeMode": "contain"
+	},
+	"updates": { "fallbackToCacheTimeout": 0 },
+	"userInterfaceStyle": "light",
+	"version": "1.0.0",
+	"web": { "favicon": "./assets/favicon.png" }
+}
