@@ -2,6 +2,7 @@ import Main from './src/components/Main';
 import createApolloClient from './src/components/utils/apolloClient';
 import AuthStorage from './src/components/utils/authStorage';
 import AuthStorageContext from './src/components/contexts/AuthStorageContext';
+import { ErrorProvider } from './src/components/contexts/ErrorContext';
 
 import { ApolloProvider } from '@apollo/client';
 
@@ -15,11 +16,13 @@ export default function App() {
 	return (
 		<>
 			<NativeRouter>
-				<ApolloProvider client={apolloClient}>
-					<AuthStorageContext.Provider value={authStorage}>
-						<Main />
-					</AuthStorageContext.Provider>
-				</ApolloProvider>
+				<ErrorProvider>
+					<ApolloProvider client={apolloClient}>
+						<AuthStorageContext.Provider value={authStorage}>
+							<Main />
+						</AuthStorageContext.Provider>
+					</ApolloProvider>
+				</ErrorProvider>
 			</NativeRouter>
 			<StatusBar style='auto' />
 		</>

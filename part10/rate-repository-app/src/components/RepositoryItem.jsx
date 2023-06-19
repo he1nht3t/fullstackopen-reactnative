@@ -13,20 +13,19 @@ const formatNumber = (number) => {
 const styles = StyleSheet.create({
 	container: {
 		display: 'flex',
+		flex: 1,
+		padding: 10,
 		backgroundColor: theme.backgroundColors.container,
 	},
 	profileContainer: {
 		display: 'flex',
-		overflow: 'hidden',
+		flex: 1,
 		flexDirection: 'row',
-		padding: 5,
 		alignItems: 'center',
 	},
 	profileDetails: {
 		display: 'flex',
-		flexShrink: 1,
-		padding: 10,
-		flexWrap: 'wrap',
+		flex: 1,
 	},
 	infoContainer: {
 		display: 'flex',
@@ -42,9 +41,9 @@ const styles = StyleSheet.create({
 		borderRadius: 5,
 	},
 	name: {
-		fontWeight: 'bold',
+		paddingVertical: 5,
+		fontWeight: theme.fontWeights.bold,
 		fontSize: theme.fontSizes.subheading,
-		paddingBottom: 5,
 	},
 	language: {
 		backgroundColor: theme.backgroundColors.primary,
@@ -52,15 +51,13 @@ const styles = StyleSheet.create({
 		paddingVertical: 5,
 		paddingHorizontal: 10,
 		borderRadius: 5,
+		overflow: 'hidden',
 		alignSelf: 'flex-start',
 		marginTop: 5,
-		overflow: 'hidden',
 	},
 	description: {
-		paddingBottom: 5,
-		overflowWrap: 'break-word',
-		flexShrink: 1,
-		width: '100%', // Add this line to set a fixed width
+		paddingVertical: 5,
+		fontWeight: theme.fontWeights.normal,
 	},
 	infoItem: {
 		justifyContent: 'center',
@@ -69,41 +66,51 @@ const styles = StyleSheet.create({
 	},
 });
 
-const RepositoryItem = ({ item }) => {
+const RepositoryItem = ({ repository }) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.profileContainer}>
 				<View>
-					<Image style={styles.avatar} source={{ uri: item.ownerAvatarUrl }} />
+					<Image
+						style={styles.avatar}
+						source={{ uri: repository.ownerAvatarUrl }}
+					/>
 				</View>
 
 				<View style={styles.profileDetails}>
-					<Text style={styles.name}>{item.fullName}</Text>
-					<Text style={styles.description}>{item.description}</Text>
-					<Text style={styles.language}>{item.language}</Text>
+					<Text style={styles.name}>{repository.fullName}</Text>
+					<Text style={styles.description}>{repository.description}</Text>
+					<Text style={styles.language}>{repository.language}</Text>
 				</View>
 			</View>
 
 			<View style={styles.infoContainer}>
 				<View style={styles.infoItem}>
 					<Text>
-						{item.stargazersCount && formatNumber(item.stargazersCount)}
+						{repository.stargazersCount &&
+							formatNumber(repository.stargazersCount)}
 					</Text>
 					<Text>Stars</Text>
 				</View>
 
 				<View style={styles.infoItem}>
-					<Text>{item.forksCount && formatNumber(item.forksCount)}</Text>
+					<Text>
+						{repository.forksCount && formatNumber(repository.forksCount)}
+					</Text>
 					<Text>Forks</Text>
 				</View>
 
 				<View style={styles.infoItem}>
-					<Text>{item.reviewCount && formatNumber(item.reviewCount)}</Text>
+					<Text>
+						{repository.reviewCount && formatNumber(repository.reviewCount)}
+					</Text>
 					<Text>Reviews</Text>
 				</View>
 
 				<View style={styles.infoItem}>
-					<Text>{item.ratingAverage && formatNumber(item.ratingAverage)}</Text>
+					<Text>
+						{repository.ratingAverage && formatNumber(repository.ratingAverage)}
+					</Text>
 					<Text>Rating</Text>
 				</View>
 			</View>
